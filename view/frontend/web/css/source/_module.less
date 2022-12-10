@@ -21,14 +21,9 @@
      *
      */
     .page-loader-container {
-        position        : absolute;
-        display         : flex;
-        justify-content : center;
-        align-items     : center;
-        width           : 100vw;
-        height          : 100vh;
-        background-color: @color-black;
-        transition      : all 0.6s ease;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
 
         /**
          *
@@ -75,46 +70,6 @@
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
                 animation : after-anim-loader 2s ease infinite;
             }
-        }
-    }
-
-    /**
-     *
-     * @note Page loading state
-     *
-     */
-    body.page-state-loading {
-        overflow: hidden;
-
-        /**
-         *
-         * @note Show loader
-         * @note Set z-index to bring the container ahead of the other containers
-         *
-         */
-        .page-loader-container {
-            visibility: visible;
-            opacity   : 1;
-            z-index   : 999999999999;
-        }
-    }
-
-    /**
-     *
-     * @note Page complete state
-     *
-     */
-    body.page-state-complete {
-        overflow: visible;
-
-        /**
-         *
-         * @note Hide loader
-         *
-         */
-        .page-loader-container {
-            visibility: hidden;
-            opacity   : 0;
         }
     }
 
