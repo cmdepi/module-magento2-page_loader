@@ -32,7 +32,7 @@
  *
  */
 ?>
-<div id="page_loader_container" class="page-loader-container">
+<div id="page_loader">
     <span class="page-loader"></span>
 </div>
 
@@ -50,10 +50,10 @@
 $scriptString = <<<script
 /**
  *
- * @note Init loader
+ * @note Get loader
  *
  */
-var loader = _initLoader();
+var loader = document.getElementById('page_loader')
 
 /**
  *
@@ -78,35 +78,6 @@ document.addEventListener('readystatechange', function () {
         }, 4000);
     }
 });
-
-/**
- *
- * Init loader
- *
- * @returns {HTMLDivElement}
- *
- * @private
- *
- */
-function _initLoader() {
-    /**
-     *
-     * @note Create loader container
-     *
-     */
-    var loaderContainer = document.getElementById('page_loader_container');
-
-    /**
-     *
-     * @note Set loader container basic styles
-     *
-     */
-    loaderContainer.style.position        = 'absolute';
-    loaderContainer.style.width           = '100vw';
-    loaderContainer.style.height          = '100vh';
-    loaderContainer.style.backgroundColor = '#000';
-    return loaderContainer;
-}
 
 /**
  *
