@@ -50,23 +50,9 @@
 $scriptString = <<<script
 /**
  *
- * @note Get loader
- *
- */
-var loader = document.getElementById('page_loader')
-
-/**
- *
- * @note Show loader
- *
- */
-_showLoader(loader);
-
-/**
- *
  * @note Loading
- * @note It is created two states defined by the classes 'page-state-loading' (loading in progress) and 'page-state-complete' (loading complete)
- * @note It is added a little delay before hide the loader, just to ensure that the page is correctly loaded
+ * @note It is created two states defined by the classes 'page-state-loading' (loading in progress) and 'page-state-complete' (loading complete) that style the loader
+ * @note It is added a little delay before complete the loading state, just to ensure that the page is correctly loaded
  *
  */
 document.body.classList.add('page-state-loading');
@@ -74,47 +60,9 @@ document.addEventListener('readystatechange', function () {
     if (document.readyState === 'complete') {
         setTimeout(() => {
             document.body.classList.add('page-state-complete');
-            _hideLoader(loader);
         }, 4000);
     }
 });
-
-/**
- *
- * Show loader
- *
- * @param {HTMLDivElement} loader
- *
- * @returns {void}
- *
- * @private
- *
- */
-function _showLoader(loader) {
-    document.body.style.overflow = 'hidden';
-    loader.style.visibility      = 'visible';
-    loader.style.opacity         = 1;
-    loader.style.zIndex          = 999999999999;
-}
-
-/**
- *
- * Hide loader
- *
- * @param {HTMLDivElement} loader
- *
- * @returns {void}
- *
- * @private
- *
- */
-function _hideLoader(loader) {
-    document.body.style.overflow = 'visible';
-    loader.style.transition      = 'all 0.6s ease';
-    loader.style.visibility      = 'hidden';
-    loader.style.opacity         = 0;
-    loader.style.zIndex          = 1;
-}
 script;
 ?>
 <?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false) ?>

@@ -1,0 +1,36 @@
+/**
+ *
+ * @description Page loader loading state styles
+ *
+ * @author Bina Commerce      <https://www.binacommerce.com>
+ * @author C. M. de Picciotto <cmdepicciotto@binacommerce.com>
+ *
+ */
+
+/**
+ *
+ * @note Common
+ *
+ */
+& when (@media-common = true) {
+    /**
+     *
+     * @note Body on loading state
+     *
+     */
+    body.page-state-loading {
+        overflow: hidden;
+
+        /**
+         *
+         * @note Page loader
+         * @note Show loader
+         *
+         */
+        #page_loader {
+            visibility: visible;
+            opacity   : 1;
+            z-index   : 999999999999;
+        }
+    }
+}
